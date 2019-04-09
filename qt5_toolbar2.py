@@ -40,21 +40,35 @@ class Main(QMainWindow):
         self.button_1.setGeometry(400, 360, 150, 40)
         self.button_1.clicked.connect(self.moreThenAverageNumber)
 
-        #self.textedit_1=
+        self.textedit_1=QTextEdit('Address:',self)
+        self.textedit_1.move(50, 50)
+        self.textedit_1.setGeometry(100, 70, 90, 30)
 
-        self.lineedit_1 = QLineEdit("ADDRESS", self)
+        self.textedit_1=QTextEdit('# connections:',self)
+        self.textedit_1.move(50, 50)
+        self.textedit_1.setGeometry(100, 100, 90, 30)
+
+        self.textedit_1=QTextEdit('# tries:',self)
+        self.textedit_1.move(50, 50)
+        self.textedit_1.setGeometry(100, 130, 90, 30)
+
+        self.textedit_1=QTextEdit('-w:',self)
+        self.textedit_1.move(50, 50)
+        self.textedit_1.setGeometry(100, 160, 90, 30)
+
+        self.lineedit_1 = QLineEdit(self)
         self.lineedit_1.move(100, 70)
         self.lineedit_1.setGeometry(200, 70, 220, 30)
 
-        self.lineedit_2 = QLineEdit("CONCURENT SESSIONS", self)
+        self.lineedit_2 = QLineEdit( self)
         self.lineedit_2.move(100, 70)
         self.lineedit_2.setGeometry(200, 100, 220, 30)
 
-        self.lineedit_3 = QLineEdit("NUMBER TRIES", self)
+        self.lineedit_3 = QLineEdit(self)
         self.lineedit_3.move(100, 70)
         self.lineedit_3.setGeometry(200, 130, 220, 30)
 
-        self.lineedit_4 = QLineEdit("-W", self)
+        self.lineedit_4 = QLineEdit(self)
         self.lineedit_4.move(100, 70)
         self.lineedit_4.setGeometry(200, 160, 220, 30)
 
