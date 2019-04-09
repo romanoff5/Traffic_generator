@@ -32,13 +32,17 @@ class Main(QMainWindow):
         self.button_1.setGeometry(400, 280, 150, 40)
         self.button_1.clicked.connect(self.putItem)
 
-        self.button_1 = QPushButton("LARGE LETTERS", self)
-        self.button_1.setGeometry(400, 320, 150, 40)
-        self.button_1.clicked.connect(self.bigLetters)
+        self.button_2 = QPushButton("LARGE LETTERS", self)
+        self.button_2.setGeometry(400, 320, 150, 40)
+        self.button_2.clicked.connect(self.bigLetters)
 
-        self.button_1 = QPushButton("> AVER. NUMBERS", self)
-        self.button_1.setGeometry(400, 360, 150, 40)
-        self.button_1.clicked.connect(self.moreThenAverageNumber)
+        self.button_3 = QPushButton("> AVER. NUMBERS", self)
+        self.button_3.setGeometry(400, 360, 150, 40)
+        self.button_3.clicked.connect(self.moreThenAverageNumber)
+
+        self.button_4 = QPushButton("RUN", self)
+        self.button_4.setGeometry(200, 200, 150, 40)
+        self.button_4.clicked.connect(self.run)
 
         self.textedit_1=QTextEdit('Address:',self)
         self.textedit_1.move(50, 50)
@@ -72,17 +76,18 @@ class Main(QMainWindow):
         self.lineedit_4.move(100, 70)
         self.lineedit_4.setGeometry(200, 160, 220, 30)
 
-
-    def backgraund(self):
-        fname, _ = QFileDialog.getOpenFileName(self, 'Open File', '', 'Images (*.png *.bmp *.img *.jpg)')
-        if fname:
-            oImage = QImage(fname)
-            sImage = oImage.scaled(QSize(900, 900))
-            palette = QPalette()
-            palette.setBrush(QPalette.Window, QBrush(sImage))
-
-    def quit(self):
-        exit()
+    def run(self):
+        self.address = str(self.lineedit_1.text())
+        self.concurent_connections = str(self.lineedit_2.text())
+        self.number_of_requests = str(self.lineedit_3.text())
+        self.timelimit = str(self.lineedit_4.text())
+        self.timeout = str(self.lineedit_5.text())
+        self.cookie = str(self.lineedit_6.text())
+        self.basic_auth = str(self.lineedit_7.text())
+        self.arbitary_header = str(self.lineedit_8.text())
+        self.content_type = str(self.lineedit_9.text())
+        os.system("ab -n "+ self.number_of_requests + " -c " + self.concurent_connections + " " + self.address)
+        self.show()
 
     def buttonReply(self):
         buttonReplyD = QMessageBox.question(self, 'PyQt5 message', "Please choose DB!", QMessageBox.Ok)
