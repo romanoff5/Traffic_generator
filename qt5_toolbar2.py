@@ -17,7 +17,6 @@ class Main(QMainWindow):
         super().__init__()
         self.initUI()
         self.database()
-        self.database2()
 
     def initUI(self):
 
@@ -46,19 +45,19 @@ class Main(QMainWindow):
 
         self.textedit_1=QTextEdit('Address:',self)
         self.textedit_1.move(50, 50)
-        self.textedit_1.setGeometry(100, 70, 90, 30)
+        self.textedit_1.setGeometry(100, 70, 120, 30)
 
-        self.textedit_1=QTextEdit('# connections:',self)
+        self.textedit_1=QTextEdit('# connects:',self)
         self.textedit_1.move(50, 50)
-        self.textedit_1.setGeometry(100, 100, 90, 30)
+        self.textedit_1.setGeometry(100, 100, 120, 30)
 
         self.textedit_1=QTextEdit('# tries:',self)
         self.textedit_1.move(50, 50)
-        self.textedit_1.setGeometry(100, 130, 90, 30)
+        self.textedit_1.setGeometry(100, 130, 120, 30)
 
         self.textedit_1=QTextEdit('-w:',self)
         self.textedit_1.move(50, 50)
-        self.textedit_1.setGeometry(100, 160, 90, 30)
+        self.textedit_1.setGeometry(100, 160, 120, 30)
 
         self.lineedit_1 = QLineEdit(self)
         self.lineedit_1.move(100, 70)
@@ -80,13 +79,19 @@ class Main(QMainWindow):
         self.address = str(self.lineedit_1.text())
         self.concurent_connections = str(self.lineedit_2.text())
         self.number_of_requests = str(self.lineedit_3.text())
-        self.timelimit = str(self.lineedit_4.text())
-        self.timeout = str(self.lineedit_5.text())
-        self.cookie = str(self.lineedit_6.text())
-        self.basic_auth = str(self.lineedit_7.text())
-        self.arbitary_header = str(self.lineedit_8.text())
-        self.content_type = str(self.lineedit_9.text())
-        os.system("ab -n "+ self.number_of_requests + " -c " + self.concurent_connections + " " + self.address)
+        # self.timelimit = str(self.lineedit_4.text())
+        # self.timeout = str(self.lineedit_5.text())
+        # self.cookie = str(self.lineedit_6.text())
+        # self.basic_auth = str(self.lineedit_7.text())
+        # self.arbitary_header = str(self.lineedit_8.text())
+        # self.content_type = str(self.lineedit_9.text())
+        run_command = "ab -n "+ self.number_of_requests + " -c " + self.concurent_connections + " " + self.address + " > output.txt && exit 0"
+        print(run_command)
+        os.system(run_command)
+        with open('output.txt') as self.file:
+            for line in self.file:
+                print(line)
+        self.file.close
         self.show()
 
     def buttonReply(self):
@@ -105,38 +110,13 @@ class Main(QMainWindow):
         self.cursor = self.conn.cursor()
 
         self.cursor.execute("""CREATE TABLE IF NOT EXISTS TEST (                   
-                    id INTEGER PRIMARY KEY AUTOINCREMENT, line1 string, line2 string)
+                    id INTEGER PRIMARY KEY AUTOINCREMENT, definition string, data string)
                     """)
-        self.cursor.execute("""INSERT INTO TEST(line1, line2) VALUES (?,?)""", ('123678', 'Data_db1'))
 
-        self.conn.commit()
-
-        self.cursor.execute("""INSERT INTO TEST(line1, line2) VALUES (?,?)""", ('123', 'GlobalDJ'))
 
         self.conn.commit()
         self.conn.close()
 
-    def database2(self):
-        try:
-            os.remove("database2.db")
-        except:
-            pass
-
-        self.conn = sqlite3.connect('database2.db')
-
-        self.cursor = self.conn.cursor()
-
-        self.cursor.execute("""CREATE TABLE IF NOT EXISTS TEST (                   
-                    id INTEGER PRIMARY KEY AUTOINCREMENT, line1 string, line2 string)
-                    """)
-        self.cursor.execute("""INSERT INTO TEST(line1, line2) VALUES (?,?)""", ('45s', 'DataDB_2'))
-
-        self.conn.commit()
-
-        self.cursor.execute("""INSERT INTO TEST(line1, line2) VALUES (?,?)""", ('456', 'Globalsyski'))
-
-        self.conn.commit()
-        self.conn.close()
 
     def comb(self, ind):
 
@@ -371,15 +351,6 @@ class Main(QMainWindow):
             self.stat_indicator == 3#to prvent new row for numbers - switch to 3 for putItem
 
 
-    def radiobutton(self):
-        if self.radiobutton1.isChecked():
-            self.conn = sqlite3.connect('database.db')
-            self.cursor = self.conn.cursor()
-        elif self.radiobutton2.isChecked():
-            self.conn = sqlite3.connect('database2.db')
-            self.cursor = self.conn.cursor()
-        else:
-            self.buttonReply()
 
     def putItem(self):
 
