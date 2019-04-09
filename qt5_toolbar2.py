@@ -14,71 +14,111 @@ class Main(QMainWindow):
 
     def initUI(self):
 
-        self.setFixedSize(900, 900)
+        self.setFixedSize(900, 930)
         self.style = "border:2px solid green; color: blue"
         self.label1 = QLabel(self)
-        self.label1.setFixedSize(450, 600)
-        self.label1.move(100, 250)
+        self.label1.setFixedSize(550, 645)
+        self.label1.move(100, 280)
         self.label1.setStyleSheet(self.style)
 
         self.button_1 = QPushButton("SHOW DATA", self)
-        self.button_1.setGeometry(550, 280, 150, 40)
-        self.button_1.clicked.connect(self.putItem)
+        self.button_1.setGeometry(650, 280, 150, 40)
+        self.button_1.clicked.connect(self.databaseOutput)
 
         self.button_2 = QPushButton("LARGE LETTERS", self)
-        self.button_2.setGeometry(550, 320, 150, 40)
-        self.button_2.clicked.connect(self.bigLetters)
+        self.button_2.setGeometry(650, 320, 150, 40)
+        self.button_2.clicked.connect(self.run)
 
         self.button_3 = QPushButton("> AVER. NUMBERS", self)
-        self.button_3.setGeometry(550, 360, 150, 40)
-        self.button_3.clicked.connect(self.moreThenAverageNumber)
+        self.button_3.setGeometry(650, 360, 150, 40)
+        self.button_3.clicked.connect(self.run)
 
         self.button_4 = QPushButton("RUN", self)
-        self.button_4.setGeometry(200, 200, 150, 40)
+        self.button_4.setGeometry(650, 200, 150, 40)
         self.button_4.clicked.connect(self.run)
 
-        self.textedit_1=QTextEdit('Address:',self)
+        self.textedit_1 = QTextEdit('Address:', self)
+        self.textedit_1.move(50, 50)
+        self.textedit_1.setGeometry(100, 10, 120, 30)
+
+        self.textedit_1 = QTextEdit('Threads:', self)
+        self.textedit_1.move(50, 50)
+        self.textedit_1.setGeometry(100, 40, 120, 30)
+
+        self.textedit_1 = QTextEdit('# of requests:', self)
         self.textedit_1.move(50, 50)
         self.textedit_1.setGeometry(100, 70, 120, 30)
 
-        self.textedit_1=QTextEdit('# connects:',self)
+        self.textedit_1 = QTextEdit('Time limit:', self)
         self.textedit_1.move(50, 50)
         self.textedit_1.setGeometry(100, 100, 120, 30)
 
-        self.textedit_1=QTextEdit('# tries:',self)
+        self.textedit_1 = QTextEdit('Timeout:', self)
         self.textedit_1.move(50, 50)
         self.textedit_1.setGeometry(100, 130, 120, 30)
 
-        self.textedit_1=QTextEdit('-w:',self)
+        self.textedit_1 = QTextEdit('Cookie:', self)
         self.textedit_1.move(50, 50)
         self.textedit_1.setGeometry(100, 160, 120, 30)
 
+        self.textedit_1 = QTextEdit('Basic auth:', self)
+        self.textedit_1.move(50, 50)
+        self.textedit_1.setGeometry(100, 190, 120, 30)
+
+        self.textedit_1 = QTextEdit('Content-type:', self)
+        self.textedit_1.move(50, 50)
+        self.textedit_1.setGeometry(100, 220, 120, 30)
+
+        self.textedit_1 = QTextEdit('Arbitary header:', self)
+        self.textedit_1.move(50, 50)
+        self.textedit_1.setGeometry(100, 250, 120, 30)
+
         self.lineedit_1 = QLineEdit(self)
         self.lineedit_1.move(100, 70)
-        self.lineedit_1.setGeometry(200, 70, 220, 30)
+        self.lineedit_1.setGeometry(200, 10, 220, 30)
 
-        self.lineedit_2 = QLineEdit( self)
+        self.lineedit_2 = QLineEdit(self)
         self.lineedit_2.move(100, 70)
-        self.lineedit_2.setGeometry(200, 100, 220, 30)
+        self.lineedit_2.setGeometry(200, 40, 220, 30)
 
         self.lineedit_3 = QLineEdit(self)
         self.lineedit_3.move(100, 70)
-        self.lineedit_3.setGeometry(200, 130, 220, 30)
+        self.lineedit_3.setGeometry(200, 70, 220, 30)
 
         self.lineedit_4 = QLineEdit(self)
         self.lineedit_4.move(100, 70)
-        self.lineedit_4.setGeometry(200, 160, 220, 30)
+        self.lineedit_4.setGeometry(200, 100, 220, 30)
+
+        self.lineedit_5 = QLineEdit(self)
+        self.lineedit_5.move(100, 70)
+        self.lineedit_5.setGeometry(200, 130, 220, 30)
+
+        self.lineedit_6 = QLineEdit(self)
+        self.lineedit_6.move(100, 70)
+        self.lineedit_6.setGeometry(200, 160, 220, 30)
+
+        self.lineedit_7 = QLineEdit(self)
+        self.lineedit_7.move(100, 70)
+        self.lineedit_7.setGeometry(200, 190, 220, 30)
+
+        self.lineedit_8 = QLineEdit(self)
+        self.lineedit_8.move(100, 70)
+        self.lineedit_8.setGeometry(200, 220, 220, 30)
+
+        self.lineedit_9 = QLineEdit(self)
+        self.lineedit_9.move(100, 70)
+        self.lineedit_9.setGeometry(200, 250, 220, 30)
 
     def run(self):
         self.address = str(self.lineedit_1.text())
         self.concurent_connections = str(self.lineedit_2.text())
         self.number_of_requests = str(self.lineedit_3.text())
-        # self.timelimit = str(self.lineedit_4.text())
-        # self.timeout = str(self.lineedit_5.text())
-        # self.cookie = str(self.lineedit_6.text())
-        # self.basic_auth = str(self.lineedit_7.text())
-        # self.arbitary_header = str(self.lineedit_8.text())
-        # self.content_type = str(self.lineedit_9.text())
+        self.timelimit = str(self.lineedit_4.text())
+        self.timeout = str(self.lineedit_5.text())
+        self.cookie = str(self.lineedit_6.text())
+        self.basic_auth = str(self.lineedit_7.text())
+        self.arbitary_header = str(self.lineedit_8.text())
+        self.content_type = str(self.lineedit_9.text())
 
         if str(sys.platform) == 'win32':  # checking os version, for windows we need to use abs instead of ab
             ab = "abs -n "
@@ -87,7 +127,7 @@ class Main(QMainWindow):
         run_command = ab + self.number_of_requests + " -c " + self.concurent_connections + " " + self.address + " > output.txt && exit 0"
         print('run_command', run_command)
         os.system(run_command)
-        count =0
+        count = 0
 
         with open('output.txt') as self.file:
             for line in self.file:
@@ -104,12 +144,8 @@ class Main(QMainWindow):
                     self.datalist0 = str(self.data_list[0])
                     self.datalist1 = str(self.data_list[1])
                     self.databaseFilling()
-        self.databaseOutput()
-        self.file.close
 
-        file = open('output.txt', 'r')
-        data = file.read()
-        self.label1.setText(str(data))
+        self.file.close
 
         file = open('output.txt', 'r')
         data = file.read()
@@ -137,7 +173,6 @@ class Main(QMainWindow):
         self.cursor.execute("""CREATE TABLE IF NOT EXISTS TEST (                   
                     id INTEGER PRIMARY KEY AUTOINCREMENT, definition string, data string)
                     """)
-
 
         self.conn.commit()
         self.conn.close()
@@ -167,80 +202,17 @@ class Main(QMainWindow):
 
         self.conn.close()
 
-    def comb(self, ind):
-        pass
-
-    def bigLetters(self):
-        if self.stat_indicator == 0:
-            self.radiobutton()
-            try:
-                self.cursor.execute("""SELECT line1,line2 FROM TEST""")
-                self.bigLettersList = list(self.cursor.fetchall())
-            except:
-                self.bigLettersList = []
-            print(' self.bigLettersList:', self.bigLettersList)
-            self.k2 = ''
-            for self.i in self.bigLettersList:
-                self.k2 += str(self.i) + ' '
-            self.k2 = re.sub('[\[\]\,\'()]', '', str(self.k2))
-            self.bigLettersList = list(self.k2.split())
-            print('self.numbersList: ', self.bigLettersList)
-            self.line1_row = []
-            for word in self.bigLettersList:
-                if word[0].isupper():
-                    self.line1_row.append(word)
-
-    def moreThenAverageNumber(self):
-        if self.stat_indicator == 0:
-            self.radiobutton()
-            try:
-                self.cursor.execute("""SELECT line1,line2 FROM TEST""")
-                self.moreAvgNumbersList = list(self.cursor.fetchall())
-            except:
-                self.moreAvgNumbersList = []
-            print(' self.moreAvgNumbersList:', self.moreAvgNumbersList)
-            self.k2 = ''
-            for self.i in self.moreAvgNumbersList:
-                self.k2 += str(self.i) + ' '
-                print('self.k2',self.k2)
-            self.k2 = re.sub('[\[\]\,\'()]', '', str(self.k2))
-            print('self.k2', self.k2)
-            self.moreAvgNumbersList = list(self.k2.split())
-            print('self.moreAvgNumbersList: ', self.moreAvgNumbersList)
-            self.line1_row = []
-            self.only_numbers_list = []
-            sumOfnumbers = 0
-            numbersQuantity =0
-            for self.i in self.moreAvgNumbersList:
-                print('self.i in moreAvgNumbersList', self.i)
-                try:
-                    int(self.i)
-                    sumOfnumbers+=int(self.i)
-                    numbersQuantity+=1
-                    self.only_numbers_list.append(self.i)
-                except:
-                    pass
-            print('sumOfnumbers',sumOfnumbers)
-            sumOfnumbers=sumOfnumbers/numbersQuantity#find average
-            print('self.only_numbers_list',self.only_numbers_list)
-            for number in self.only_numbers_list:
-                if int(number) > int(sumOfnumbers) or numbersQuantity==1:
-                    self.line1_row.append(number)
-            print('self.line1_row in avg numbers:',self.line1_row)
-            self.stat_indicator == 3#to prvent new row for numbers - switch to 3 for putItem
-
-
+        self.putItem()
 
     def putItem(self):
 
         self.k = ''
-        for self.i in self.line1_row:
-            if self.stat_indicator == 3:#works for stistics and > average number button
-                self.k += str(self.i)
-            else:
-                self.k += str(self.i) + '\n'
-        self.k = re.sub('[\[\],\'()]', '', str(self.k))
+        for self.i in self.DBoutput:
+            self.k += str(self.i) + '\n'
+        self.k = re.sub('[\[\]\'()]', '', str(self.k))
+        self.k = re.sub('[,]', ':          ', str(self.k))  # adding :
         self.label1.setText(str(self.k))
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
