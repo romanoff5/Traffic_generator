@@ -7,7 +7,7 @@ import math
 import sys
 
 from PyQt5.QtWidgets import QMainWindow, QApplication, QComboBox, QWidget, QAction, QRadioButton, QMessageBox, \
-    QPushButton, QLineEdit, QLabel, QFileDialog
+    QPushButton, QLineEdit, QLabel, QFileDialog, QTextEdit
 from PyQt5.QtGui import QIcon, QPalette, QBrush, QImage, QPixmap, QColor
 from PyQt5.QtCore import QSize
 
@@ -39,6 +39,8 @@ class Main(QMainWindow):
         self.button_1 = QPushButton("> AVER. NUMBERS", self)
         self.button_1.setGeometry(400, 360, 150, 40)
         self.button_1.clicked.connect(self.moreThenAverageNumber)
+
+        #self.textedit_1=
 
         self.lineedit_1 = QLineEdit("ADDRESS", self)
         self.lineedit_1.move(100, 70)
