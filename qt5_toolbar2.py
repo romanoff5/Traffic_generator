@@ -1,10 +1,4 @@
-import sqlite3
-import random
-import os
-import re
-import math
-
-import sys
+import sqlite3, os, sys, re
 
 from PyQt5.QtWidgets import QMainWindow, QApplication, QComboBox, QWidget, QAction, QRadioButton, QMessageBox, \
     QPushButton, QLineEdit, QLabel, QFileDialog, QTextEdit
@@ -23,20 +17,20 @@ class Main(QMainWindow):
         self.setFixedSize(900, 900)
         self.style = "border:2px solid green; color: blue"
         self.label1 = QLabel(self)
-        self.label1.setFixedSize(280, 350)
+        self.label1.setFixedSize(450, 600)
         self.label1.move(100, 250)
         self.label1.setStyleSheet(self.style)
 
         self.button_1 = QPushButton("SHOW DATA", self)
-        self.button_1.setGeometry(400, 280, 150, 40)
+        self.button_1.setGeometry(550, 280, 150, 40)
         self.button_1.clicked.connect(self.putItem)
 
         self.button_2 = QPushButton("LARGE LETTERS", self)
-        self.button_2.setGeometry(400, 320, 150, 40)
+        self.button_2.setGeometry(550, 320, 150, 40)
         self.button_2.clicked.connect(self.bigLetters)
 
         self.button_3 = QPushButton("> AVER. NUMBERS", self)
-        self.button_3.setGeometry(400, 360, 150, 40)
+        self.button_3.setGeometry(550, 360, 150, 40)
         self.button_3.clicked.connect(self.moreThenAverageNumber)
 
         self.button_4 = QPushButton("RUN", self)
@@ -85,13 +79,44 @@ class Main(QMainWindow):
         # self.basic_auth = str(self.lineedit_7.text())
         # self.arbitary_header = str(self.lineedit_8.text())
         # self.content_type = str(self.lineedit_9.text())
-        run_command = "ab -n "+ self.number_of_requests + " -c " + self.concurent_connections + " " + self.address + " > output.txt && exit 0"
-        print(run_command)
+
+        if str(sys.platform) == 'win32':  # checking os version, for windows we need to use abs instead of ab
+            ab = "abs -n "
+        else:
+            ab = "ab -n "
+        run_command = ab + self.number_of_requests + " -c " + self.concurent_connections + " " + self.address + " > output.txt && exit 0"
+        print('run_command', run_command)
         os.system(run_command)
+        count =0
+
         with open('output.txt') as self.file:
             for line in self.file:
-                print(line)
+                print('line: ', line)
+                print('lenght line: ', len(line))
+                count += 1
+                if count > 7 and count < 28 and len(line) > 1:  # exclude empty and not nessasary lines
+                    self.data_list = list(line.split(':'))
+                    self.data_list[-1] = self.data_list[-1].strip()  # removing /n
+                    self.data_list = list(self.data_list)
+                    print('self.data_list:', self.data_list)
+                    print('datalist0:', self.data_list[0])
+                    print('datalist1:', self.data_list[1])
+                    self.datalist0 = str(self.data_list[0])
+                    self.datalist1 = str(self.data_list[1])
+                    self.databaseFilling()
+        self.databaseOutput()
         self.file.close
+
+        file = open('output.txt', 'r')
+        data = file.read()
+        self.label1.setText(str(data))
+
+        file = open('output.txt', 'r')
+        data = file.read()
+        self.label1.setText(str(data))
+
+        self.file.close
+
         self.show()
 
     def buttonReply(self):
@@ -117,179 +142,33 @@ class Main(QMainWindow):
         self.conn.commit()
         self.conn.close()
 
+    def databaseFilling(self):
+
+        self.conn = sqlite3.connect('database.db')
+
+        self.cursor = self.conn.cursor()
+        # insert data to table
+
+        self.cursor.execute("""INSERT INTO TEST(definition,data) VALUES (?,?)""", (self.datalist0, self.datalist1,))
+
+        self.conn.commit()
+
+        self.conn.close()
+
+    def databaseOutput(self):
+
+        self.conn = sqlite3.connect('database.db')
+
+        self.cursor = self.conn.cursor()
+
+        self.cursor.execute("""SELECT definition,data FROM TEST""")
+        self.DBoutput = list(self.cursor.fetchall())
+        print(self.DBoutput)
+
+        self.conn.close()
 
     def comb(self, ind):
-
-        if ind == 0:
-            self.radiobutton()
-            self.stat_indicator = 0
-            try:
-                self.cursor.execute("""SELECT line1,line2 FROM TEST""")
-                self.AllList = list(self.cursor.fetchall())
-            except:
-                self.AllList = []
-            print(' self.numbersList:', self.AllList)
-            self.k2 = ''
-            for self.i in self.AllList:
-                self.k2 += str(self.i) + ' '
-            self.k2 = re.sub('[\[\]\,\'()]', '', str(self.k2))
-            self.AllList = list(self.k2.split())
-            print('self.numbersList: ', self.AllList)
-            self.line1_row = []
-            for self.i in self.AllList:
-                self.line1_row.append(self.i)
-        elif ind == 1:
-            self.radiobutton()
-            self.stat_indicator = 1
-            try:
-                self.cursor.execute("""SELECT line1,line2 FROM TEST""")
-                self.numbersList = list(self.cursor.fetchall())
-            except:
-                self.numbersList = []
-            print(' self.numbersList:', self.numbersList)
-            self.k2 = ''
-            for self.i in self.numbersList:
-                self.k2 += str(self.i) + ' '
-            self.k2 = re.sub('[\[\]\,\'()]', '', str(self.k2))
-            self.numbersList = list(self.k2.split())
-            print('self.numbersList: ', self.numbersList)
-            self.line1_row = []
-            for self.i in self.numbersList:
-                try:
-                    int(self.i)
-                    self.line1_row.append(int(self.i))
-                except:
-                    pass
-        elif ind == 2:
-            self.radiobutton()
-            self.stat_indicator = 2
-            try:
-                self.cursor.execute("""SELECT line1,line2 FROM TEST""")
-                self.stringList = list(self.cursor.fetchall())
-                print('self.stringList(1st after select from db): ', self.stringList)
-            except:
-                self.stringList = []
-            self.k2 = ''
-            for self.i in self.stringList:
-                print('self.i', self.i)
-                self.k2 += str(self.i) + ' '
-            print('self.k2', self.k2)
-            self.k2 = re.sub('[\[\],\'()]', '', str(self.k2))
-            self.stringList = list(self.k2.split())
-            print('self.stringList: ', self.stringList)
-            self.line1_row = []
-            for self.i in self.stringList:
-                try:
-                    int(self.i)
-                except:
-                    self.line1_row.append(self.i)
-                    pass
-        elif ind == 3:
-            self.radiobutton()
-            self.stat_indicator = 3
-            try:
-                self.cursor.execute("""SELECT line1,line2 FROM TEST""")
-                self.numbersList = list(self.cursor.fetchall())
-            except:
-                self.numbersList = []
-            self.k2 = ''
-            for self.i in self.numbersList:
-                self.k2 += str(self.i) + ', '
-            self.k2 = re.sub('[\[\],\'()]', '', str(self.k2))
-            self.numbersList = list(self.k2.split())
-            print('self.numbersList: ', self.numbersList)
-            self.line1_row = []
-            self.numbers = 0
-            self.texts = 0
-            for self.i in self.numbersList:
-                try:
-                    if int(self.i) / int(self.i) == 1:
-                        self.numbers += 1
-                except:
-                    self.texts += 1
-                    pass
-            self.line1_row = 'Numbers in DB: ' + str(self.numbers) + "\n" + 'String values in DB: ' + str(self.texts)
-            self.line1_row = list(self.line1_row)
-
-    def comb2(self, ind):
-        if ind == 0:
-            self.style = " background-color : red; border:2px solid green; color: blue"
-            self.label1.setStyleSheet(self.style)
-
-##sort
-        elif ind == 1:
-# all data
-            self.radiobutton()
-            if self.stat_indicator == 0:
-                try:
-                    self.cursor.execute("""SELECT line1,line2 FROM TEST""")
-                    self.AllList = list(self.cursor.fetchall())
-                except:
-                    self.AllList = []
-                print(' self.numbersList:', self.AllList)
-                self.k2 = ''
-                for self.i in self.AllList:
-                    self.k2 += str(self.i) + ' '
-                self.k2 = re.sub('[\[\]\,\'()]', '', str(self.k2))
-                self.AllList = list(self.k2.split())
-                print('self.numbersList: ', self.AllList)
-                self.line1_row = []
-                for self.i in self.AllList:
-                    self.line1_row.append(self.i)
-
-                self.line1_row.sort()
-## numbers
-            elif self.stat_indicator == 1:
-                self.radiobutton()
-                try:
-                    self.cursor.execute("""SELECT line1,line2 FROM TEST""")
-                    self.sortList = list(self.cursor.fetchall())
-                except:
-                    self.sortList = []
-                print(' self.sortList:', self.sortList)
-                self.k2 = ''
-                for self.i in self.sortList:
-                    self.k2 += str(self.i) + ' '
-                self.k2 = re.sub('[\[\]\,\'()]', '', str(self.k2))
-                print('self.k2 ', self.k2)
-                self.sortList = list(self.k2.split())
-                print('self.sortList: ', self.sortList)
-                self.line1_row = []
-                for self.i in self.sortList:
-                    try:
-                        int(self.i)
-                        self.line1_row.append(int(self.i))
-                    except:
-                        pass
-
-                self.line1_row.sort()
-## text
-            elif  self.stat_indicator == 2:
-                self.radiobutton()
-                self.stat_indicator = 2
-                try:
-                    self.cursor.execute("""SELECT line1,line2 FROM TEST""")
-                    self.stringList = list(self.cursor.fetchall())
-                    print('self.stringList(1st after select from db): ', self.stringList)
-                except:
-                    self.stringList = []
-                self.k2 = ''
-                for self.i in self.stringList:
-                    print('self.i', self.i)
-                    self.k2 += str(self.i) + ' '
-                print('self.k2', self.k2)
-                self.k2 = re.sub('[\[\],\'()]', '', str(self.k2))
-                self.stringList = list(self.k2.split())
-                print('self.stringList: ', self.stringList)
-                self.line1_row = []
-                for self.i in self.stringList:
-                    try:
-                        int(self.i)
-                    except:
-                        self.line1_row.append(self.i)
-                        pass
-                self.line1_row.sort()
-
+        pass
 
     def bigLetters(self):
         if self.stat_indicator == 0:
