@@ -147,7 +147,7 @@ class Main(QMainWindow):
             os.remove("output.txt")
         except:
             pass
-        run_command = ab + self.number_of_requests + " -c " + self.concurent_connections + " " + self.address + " >> output.txt && exit 0"
+        run_command = ab + self.number_of_requests + " -c " + self.concurent_connections + " " + self.address + " > output.txt && exit 0"
         print('run_command', run_command)
         os.system(run_command)
         count = 0
