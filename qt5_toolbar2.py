@@ -13,27 +13,27 @@ class Main(QMainWindow):
 
     def initUI(self):
 
-        self.setFixedSize(900, 930)
+        self.setFixedSize(1200, 1230)
         self.style = "border:2px solid green; color: blue"
         self.label1 = QLabel(self)
-        self.label1.setFixedSize(550, 645)
-        self.label1.move(100, 280)
+        self.label1.setFixedSize(500, 900)
+        self.label1.move(100, 300)
         self.label1.setStyleSheet(self.style)
 
         self.button_1 = QPushButton("SHOW DATA", self)
-        self.button_1.setGeometry(650, 280, 150, 40)
+        self.button_1.setGeometry(620, 300, 150, 40)
         self.button_1.clicked.connect(self.databaseOutput)
 
         self.button_2 = QPushButton("LARGE LETTERS", self)
-        self.button_2.setGeometry(650, 320, 150, 40)
+        self.button_2.setGeometry(620, 340, 150, 40)
         self.button_2.clicked.connect(self.run)
 
         self.button_3 = QPushButton("> AVER. NUMBERS", self)
-        self.button_3.setGeometry(650, 360, 150, 40)
+        self.button_3.setGeometry(620, 380, 150, 40)
         self.button_3.clicked.connect(self.run)
 
         self.button_4 = QPushButton("RUN", self)
-        self.button_4.setGeometry(650, 200, 150, 40)
+        self.button_4.setGeometry(450, 10, 150, 270)
         self.button_4.clicked.connect(self.run)
 
         self.lbl1 = QLabel(self)
