@@ -10,7 +10,6 @@ class Main(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
-        self.database()
 
     def initUI(self):
 
@@ -110,6 +109,7 @@ class Main(QMainWindow):
         self.lineedit_9.setGeometry(200, 250, 220, 30)
 
     def run(self):
+        self.database()
         self.address = str(self.lineedit_1.text())
         self.concurent_connections = str(self.lineedit_2.text())
         self.number_of_requests = str(self.lineedit_3.text())
@@ -124,7 +124,11 @@ class Main(QMainWindow):
             ab = "abs -n "
         else:
             ab = "ab -n "
-        run_command = ab + self.number_of_requests + " -c " + self.concurent_connections + " " + self.address + " > output.txt && exit 0"
+        try:
+            os.remove("output.txt")
+        except:
+            pass
+        run_command = ab + self.number_of_requests + " -c " + self.concurent_connections + " " + self.address + " >> output.txt && exit 0"
         print('run_command', run_command)
         os.system(run_command)
         count = 0
