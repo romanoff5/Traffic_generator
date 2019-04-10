@@ -33,7 +33,7 @@ class Main(QMainWindow):
         self.button_3.clicked.connect(self.run)
 
         self.button_4 = QPushButton("RUN", self)
-        self.button_4.setGeometry(450, 10, 150, 270)
+        self.button_4.setGeometry(620, 10, 150, 270)
         self.button_4.clicked.connect(self.run)
 
         self.lbl1 = QLabel(self)
@@ -93,39 +93,39 @@ class Main(QMainWindow):
 
         self.lineedit_1 = QLineEdit(self)
         self.lineedit_1.move(100, 70)
-        self.lineedit_1.setGeometry(200, 10, 220, 30)
+        self.lineedit_1.setGeometry(200, 10, 400, 30)
 
         self.lineedit_2 = QLineEdit(self)
         self.lineedit_2.move(100, 70)
-        self.lineedit_2.setGeometry(200, 40, 220, 30)
+        self.lineedit_2.setGeometry(200, 40, 400, 30)
 
         self.lineedit_3 = QLineEdit(self)
         self.lineedit_3.move(100, 70)
-        self.lineedit_3.setGeometry(200, 70, 220, 30)
+        self.lineedit_3.setGeometry(200, 70, 400, 30)
 
         self.lineedit_4 = QLineEdit(self)
         self.lineedit_4.move(100, 70)
-        self.lineedit_4.setGeometry(200, 100, 220, 30)
+        self.lineedit_4.setGeometry(200, 100, 400, 30)
 
         self.lineedit_5 = QLineEdit(self)
         self.lineedit_5.move(100, 70)
-        self.lineedit_5.setGeometry(200, 130, 220, 30)
+        self.lineedit_5.setGeometry(200, 130, 400, 30)
 
         self.lineedit_6 = QLineEdit(self)
         self.lineedit_6.move(100, 70)
-        self.lineedit_6.setGeometry(200, 160, 220, 30)
+        self.lineedit_6.setGeometry(200, 160, 400, 30)
 
         self.lineedit_7 = QLineEdit(self)
         self.lineedit_7.move(100, 70)
-        self.lineedit_7.setGeometry(200, 190, 220, 30)
+        self.lineedit_7.setGeometry(200, 190, 400, 30)
 
         self.lineedit_8 = QLineEdit(self)
         self.lineedit_8.move(100, 70)
-        self.lineedit_8.setGeometry(200, 220, 220, 30)
+        self.lineedit_8.setGeometry(200, 220, 400, 30)
 
         self.lineedit_9 = QLineEdit(self)
         self.lineedit_9.move(100, 70)
-        self.lineedit_9.setGeometry(200, 250, 220, 30)
+        self.lineedit_9.setGeometry(200, 250, 400, 30)
 
     def run(self):
         self.database()
