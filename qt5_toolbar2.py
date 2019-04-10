@@ -90,7 +90,6 @@ class Main(QMainWindow):
         self.lbl9.move(50, 50)
         self.lbl9.setGeometry(70, 250, 120, 30)
 
-
         self.lineedit_1 = QLineEdit(self)
         self.lineedit_1.move(100, 70)
         self.lineedit_1.setGeometry(200, 10, 400, 30)
@@ -129,25 +128,63 @@ class Main(QMainWindow):
 
     def run(self):
         self.database()
+
+        # self.address == 0
+        # self.concurent_connections
+        # self.number_of_requests
+        #
+        # self.timelimit
+        # self.timeout
+        # self.cookie
+        # self.basic_auth
+        # self.arbitary_header
+        # self.content_type
+
         self.address = str(self.lineedit_1.text())
+        if self.address != "":
+            self.address = " " + self.address
+
         self.concurent_connections = str(self.lineedit_2.text())
+        if self.concurent_connections != "":
+            self.concurent_connections = " -c " + self.concurent_connections
+
         self.number_of_requests = str(self.lineedit_3.text())
+        if self.number_of_requests != "":
+            self.number_of_requests = " -n " + self.number_of_requests
+
         self.timelimit = str(self.lineedit_4.text())
+        if self.timelimit != "":
+            self.timelimit = " -t " + self.timelimit
+
         self.timeout = str(self.lineedit_5.text())
+        if self.timeout != "":
+            self.timeout = " -s " + self.timeout
+
         self.cookie = str(self.lineedit_6.text())
+        if self.cookie != "":
+            self.cookie = " -C " + self.cookie
+
         self.basic_auth = str(self.lineedit_7.text())
+        if self.basic_auth != "":
+            self.basic_auth = " -A " + self.basic_auth
+
         self.arbitary_header = str(self.lineedit_8.text())
+        if self.arbitary_header != "":
+            self.arbitary_header = " -H " + self.arbitary_header
+
         self.content_type = str(self.lineedit_9.text())
+        if self.content_type != "":
+            self.content_type = " -T " + self.content_type
 
         if str(sys.platform) == 'win32':  # checking os version, for windows we need to use abs instead of ab
-            ab = "abs -n "
+            ab = "abs"
         else:
-            ab = "ab -n "
+            ab = "ab"
         try:
             os.remove("output.txt")
         except:
             pass
-        run_command = ab + self.number_of_requests + " -c " + self.concurent_connections + " " + self.address + " > output.txt && exit 0"
+        run_command = ab + self.number_of_requests + self.timelimit + self.basic_auth + self.arbitary_header + self.cookie + self.content_type + self.timeout + self.concurent_connections + self.address + " > output.txt && exit 0"
         print('run_command', run_command)
         os.system(run_command)
         count = 0
