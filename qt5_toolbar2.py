@@ -168,13 +168,13 @@ class Main(QMainWindow):
         if self.basic_auth != "":
             self.basic_auth = " -A " + self.basic_auth
 
-        self.arbitary_header = str(self.lineedit_8.text())
-        if self.arbitary_header != "":
-            self.arbitary_header = " -H " + self.arbitary_header
-
-        self.content_type = str(self.lineedit_9.text())
+        self.content_type = str(self.lineedit_8.text())
         if self.content_type != "":
             self.content_type = " -T " + self.content_type
+
+        self.arbitary_header = str(self.lineedit_9.text())
+        if self.arbitary_header != "":
+            self.arbitary_header = " -H " + self.arbitary_header
 
         if str(sys.platform) == 'win32':  # checking os version, for windows we need to use abs instead of ab
             ab = "abs"
