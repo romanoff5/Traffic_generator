@@ -13,10 +13,10 @@ class Main(QMainWindow):
 
     def initUI(self):
 
-        self.setFixedSize(1200, 1230)
+        self.setFixedSize(900, 930)
         self.style = "border:2px solid green; color: blue"
         self.label1 = QLabel(self)
-        self.label1.setFixedSize(500, 900)
+        self.label1.setFixedSize(500,620)
         self.label1.move(100, 300)
         self.label1.setStyleSheet(self.style)
 
@@ -40,55 +40,55 @@ class Main(QMainWindow):
         self.lbl1.setText("Address:")
         self.lbl1.adjustSize()
         self.lbl1.move(50, 50)
-        self.lbl1.setGeometry(70, 10, 120, 30)
+        self.lbl1.setGeometry(50, 10, 120, 30)
 
         self.lbl2 = QLabel(self)
         self.lbl2.setText("Threads:")
         self.lbl2.adjustSize()
         self.lbl2.move(50, 50)
-        self.lbl2.setGeometry(70, 40, 120, 30)
+        self.lbl2.setGeometry(50, 40, 120, 30)
 
         self.lbl3 = QLabel(self)
-        self.lbl3.setText("№ of requests:")
+        self.lbl3.setText("Requests number:")
         self.lbl3.adjustSize()
         self.lbl3.move(50, 50)
-        self.lbl3.setGeometry(70, 70, 120, 30)
+        self.lbl3.setGeometry(50, 70, 150, 30)
 
         self.lbl4 = QLabel(self)
         self.lbl4.setText("Time limit:")
         self.lbl4.adjustSize()
         self.lbl4.move(50, 50)
-        self.lbl4.setGeometry(70, 100, 120, 30)
+        self.lbl4.setGeometry(50, 100, 120, 30)
 
         self.lbl5 = QLabel(self)
         self.lbl5.setText("Timeout:")
         self.lbl5.adjustSize()
         self.lbl5.move(50, 50)
-        self.lbl5.setGeometry(70, 130, 120, 30)
+        self.lbl5.setGeometry(50, 130, 120, 30)
 
         self.lbl6 = QLabel(self)
         self.lbl6.setText("Cookie:")
         self.lbl6.adjustSize()
         self.lbl6.move(50, 50)
-        self.lbl6.setGeometry(70, 160, 120, 30)
+        self.lbl6.setGeometry(50, 160, 120, 30)
 
         self.lbl7 = QLabel(self)
         self.lbl7.setText("Basic auth:")
         self.lbl7.adjustSize()
         self.lbl7.move(50, 50)
-        self.lbl7.setGeometry(70, 190, 120, 30)
+        self.lbl7.setGeometry(50, 190, 120, 30)
 
         self.lbl8 = QLabel(self)
         self.lbl8.setText("Content-type:")
         self.lbl8.adjustSize()
         self.lbl8.move(50, 50)
-        self.lbl8.setGeometry(70, 220, 120, 30)
+        self.lbl8.setGeometry(50, 220, 120, 30)
 
         self.lbl9 = QLabel(self)
         self.lbl9.setText("Arbitary header:'")
         self.lbl9.adjustSize()
         self.lbl9.move(50, 50)
-        self.lbl9.setGeometry(70, 250, 120, 30)
+        self.lbl9.setGeometry(50, 250, 120, 30)
 
         self.lineedit_1 = QLineEdit(self)
         self.lineedit_1.move(100, 70)
