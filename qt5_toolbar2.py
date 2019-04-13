@@ -24,14 +24,6 @@ class Main(QMainWindow):
         self.button_1.setGeometry(620, 300, 150, 40)
         self.button_1.clicked.connect(self.databaseOutput)
 
-        self.button_2 = QPushButton("LARGE LETTERS", self)
-        self.button_2.setGeometry(620, 340, 150, 40)
-        self.button_2.clicked.connect(self.run)
-
-        self.button_3 = QPushButton("> AVER. NUMBERS", self)
-        self.button_3.setGeometry(620, 380, 150, 40)
-        self.button_3.clicked.connect(self.run)
-
         self.button_4 = QPushButton("RUN", self)
         self.button_4.setGeometry(620, 10, 150, 270)
         self.button_4.clicked.connect(self.run)
@@ -129,17 +121,6 @@ class Main(QMainWindow):
     def run(self):
         self.database()
 
-        # self.address == 0
-        # self.concurent_connections
-        # self.number_of_requests
-        #
-        # self.timelimit
-        # self.timeout
-        # self.cookie
-        # self.basic_auth
-        # self.arbitary_header
-        # self.content_type
-
         self.address = str(self.lineedit_1.text())
         if self.address != "":
             self.address = " " + self.address
@@ -170,11 +151,11 @@ class Main(QMainWindow):
 
         self.arbitary_header = str(self.lineedit_8.text())
         if self.arbitary_header != "":
-            self.arbitary_header = " -H " + self.arbitary_header
+            self.arbitary_header = " -T " + self.arbitary_header
 
         self.content_type = str(self.lineedit_9.text())
         if self.content_type != "":
-            self.content_type = " -T " + self.content_type
+            self.content_type = " -H " + self.content_type
 
         if str(sys.platform) == 'win32':  # checking os version, for windows we need to use abs instead of ab
             ab = "abs"
