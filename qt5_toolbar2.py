@@ -13,10 +13,10 @@ class Main(QMainWindow):
 
     def initUI(self):
 
-        self.setFixedSize(1200, 1230)
+        self.setFixedSize(900, 970)
         self.style = "border:2px solid green; color: blue"
         self.label1 = QLabel(self)
-        self.label1.setFixedSize(500, 900)
+        self.label1.setFixedSize(500, 650)
         self.label1.move(100, 300)
         self.label1.setStyleSheet(self.style)
 
@@ -77,7 +77,7 @@ class Main(QMainWindow):
         self.lbl8.setGeometry(70, 220, 120, 30)
 
         self.lbl9 = QLabel(self)
-        self.lbl9.setText("Arbitary header:'")
+        self.lbl9.setText("Arbitary header:")
         self.lbl9.adjustSize()
         self.lbl9.move(50, 50)
         self.lbl9.setGeometry(70, 250, 120, 30)
@@ -155,7 +155,13 @@ class Main(QMainWindow):
 
         self.content_type = str(self.lineedit_9.text())
         if self.content_type != "":
-            self.content_type = " -H " + self.content_type
+            self.content_type_new = ''
+            self.content_type = self.content_type.split(', ')
+            for self.i in self.content_type:
+                self.content_type_new += " -H \"" + self.i + "\""
+                print(self.content_type_new)
+
+
 
         if str(sys.platform) == 'win32':  # checking os version, for windows we need to use abs instead of ab
             ab = "abs"
@@ -165,7 +171,7 @@ class Main(QMainWindow):
             os.remove("output.txt")
         except:
             pass
-        run_command = ab + self.number_of_requests + self.timelimit + self.basic_auth + self.arbitary_header + self.cookie + self.content_type + self.timeout + self.concurent_connections + self.address + " > output.txt && exit 0"
+        run_command = ab + self.number_of_requests + self.timelimit + self.basic_auth + self.arbitary_header + self.cookie + self.content_type_new + self.timeout + self.concurent_connections + self.address + " > output.txt && exit 0"
         print('run_command', run_command)
         os.system(run_command)
         count = 0
