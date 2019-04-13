@@ -254,7 +254,6 @@ class Main(QMainWindow):
         self.k = re.sub('[,]', ':          ', str(self.k))  # adding :
         self.label1.setText(str(self.k))
 
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = Main()
