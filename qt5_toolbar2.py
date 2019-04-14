@@ -158,8 +158,8 @@ class Main(QMainWindow):
             self.content_type_new = ''
             self.content_type = self.content_type.split(', ')
             for self.i in self.content_type:
-                self.content_type_new += " -H \"" + self.i + "\""
-                print(self.content_type_new)
+                self.content_type += " -H \"" + self.i + "\""
+                print(self.content_type)
 
 
 
