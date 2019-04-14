@@ -155,13 +155,12 @@ class Main(QMainWindow):
 
         self.content_type = str(self.lineedit_9.text())
         if self.content_type != "":
-            self.content_type_new = ''
-            self.content_type = self.content_type.split(', ')
+            self.content_type = " -H \"" + self.content_type + "\""
+        else:
+            self.content_type = self.content_type.split(',')
             for self.i in self.content_type:
                 self.content_type += " -H \"" + self.i + "\""
-                print(self.content_type)
-
-
+            print(self.content_type)
 
         if str(sys.platform) == 'win32':  # checking os version, for windows we need to use abs instead of ab
             ab = "abs"
@@ -171,7 +170,7 @@ class Main(QMainWindow):
             os.remove("output.txt")
         except:
             pass
-        run_command = ab + self.number_of_requests + self.timelimit + self.basic_auth + self.arbitary_header + self.cookie + self.content_type_new + self.timeout + self.concurent_connections + self.address + " > output.txt && exit 0"
+        run_command = ab + self.number_of_requests + self.timelimit + self.basic_auth + self.arbitary_header + self.cookie + self.content_type + self.timeout + self.concurent_connections + self.address + " > output.txt && exit 0"
         print('run_command', run_command)
         os.system(run_command)
         count = 0
