@@ -154,10 +154,10 @@ class Main(QMainWindow):
             self.arbitary_header = " -T " + self.arbitary_header
 
         self.content_type = str(self.lineedit_9.text())
+        self.content_type_new = ''
         if self.content_type != "":
             self.content_type = self.content_type.split(', ')
             print(self.content_type)
-            self.content_type_new = ''
             for self.i in self.content_type:
                 self.content_type_new += " -H \"" + self.i + "\""
             print(self.content_type_new)
