@@ -1,4 +1,4 @@
-# AB
+# Traffic generator
 Requared data:
 - Address.
 - Threads.
