@@ -19,12 +19,32 @@
               },
               "position": {
                 "x": 820,
-                "y": 40
+                "y": 42
               },
               "angle": 0,
               "id": "80d59b2d-0ef3-498b-8af3-dce1ea2629c9",
               "z": 1,
               "hasOpenThreats": false,
+              "threats": [
+                {
+                  "ruleId": "4adaa48a-0345-4533-a189-64c98c4420dd",
+                  "title": "Unauthorized access",
+                  "type": "Information disclosure",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "description": "An attacker could make a query call on the DB",
+                  "mitigation": "External connections to  DB are prohibited\nRequire all queries to be authenticated.\nIAM Roles with attached IAM policies Lambda functions are used to access DB\nUsing resource-based policies for AWS Lambda to access Labda fuctions"
+                },
+                {
+                  "ruleId": "87bc37e2-798e-4d68-bb96-feb1da26da48",
+                  "title": "Credential theft",
+                  "type": "Information disclosure",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "An attacker could obtain the DB credentials and use them to make unauthorized queries.",
+                  "mitigation": "Credentials are rotated\nDB is isolated from external connections"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
                   "class": "element-shape hasNoOpenThreats isInScope"
@@ -103,6 +123,24 @@
               "id": "aaa862f1-9e66-4b30-a241-f499e142e02e",
               "z": 12,
               "hasOpenThreats": false,
+              "threats": [
+                {
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "title": "Poison messages",
+                  "type": "Denial of service",
+                  "mitigation": "AWS WAF implemented protections based on a fixed number of retries.\nAWS API Gateway validates the content of all messages, before processing. \nAWS API Gateway rejects any message that has invalid content and logs the rejection. Do not log the malicious content - instead, log a description of the error.",
+                  "description": "An attacker could generate a malicious message that the API cannot process."
+                },
+                {
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "mitigation": "The API required authorization for each request\nManual, Dynamic, and Static penetration testing",
+                  "title": "Information disclosure from the API",
+                  "description": "An attacker can gain access to PHI via unauthorized API requests"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
                   "class": "element-shape hasNoOpenThreats isInScope"
@@ -318,12 +356,12 @@
                   "y": 650
                 },
                 {
-                  "x": 1220,
-                  "y": 210
+                  "x": 953,
+                  "y": 365
                 },
                 {
-                  "x": 1200,
-                  "y": 90
+                  "x": 1045,
+                  "y": 1767
                 },
                 {
                   "x": 1100,
@@ -372,11 +410,11 @@
               "id": "af098ac8-4ef9-4c14-91ef-7658bfc49553",
               "z": 19,
               "hasOpenThreats": false,
-              "outOfScope": false,
+              "outOfScope": true,
               "reasonOutOfScope": "External service",
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasNoOpenThreats isOutOfScope"
                 },
                 "text": {
                   "text": "Survey Service"
@@ -1023,6 +1061,16 @@
               "id": "dcb75e28-c76f-45a2-9863-9c2c41c0bd09",
               "z": 42,
               "hasOpenThreats": false,
+              "threats": [
+                {
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "title": "Unauthorised Access",
+                  "type": "Information disclosure",
+                  "description": "An attacker can bypass authentication schema, brute-force, or steal credentials",
+                  "mitigation": "Authentication: MFA is used to access patients data\nAuthorization: Each request required authorization header\nHTTPs connection to the app\nPrivate and public API segregation\nManual, Dynamic, and static penetration testing"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
                   "class": "element-shape hasNoOpenThreats isInScope"
@@ -1107,11 +1155,37 @@
                   "class": "connection hasNoOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 1262,
+                "y": 208
+              },
+              "angle": 0,
+              "id": "ca475878-ea32-46c0-9f60-cbf973aec446",
+              "z": 45,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "actor 31"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
             }
           ]
         },
         "size": {
-          "height": 1616,
+          "height": 1776,
           "width": 2110
         }
       }
