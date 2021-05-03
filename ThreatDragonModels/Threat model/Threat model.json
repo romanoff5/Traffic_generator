@@ -340,63 +340,6 @@
               }
             },
             {
-              "type": "tm.Boundary",
-              "smooth": true,
-              "source": {
-                "x": 1320,
-                "y": 850
-              },
-              "target": {
-                "x": 1320,
-                "y": 850
-              },
-              "vertices": [
-                {
-                  "x": 1320,
-                  "y": 650
-                },
-                {
-                  "x": 953,
-                  "y": 365
-                },
-                {
-                  "x": 1045,
-                  "y": 1767
-                },
-                {
-                  "x": 1100,
-                  "y": 28
-                },
-                {
-                  "x": 720,
-                  "y": 32
-                },
-                {
-                  "x": 700,
-                  "y": 200
-                },
-                {
-                  "x": 690,
-                  "y": 370
-                },
-                {
-                  "x": 650,
-                  "y": 490
-                },
-                {
-                  "x": 660,
-                  "y": 690
-                },
-                {
-                  "x": 800,
-                  "y": 840
-                }
-              ],
-              "id": "7018276f-d193-4337-9acb-21d4d842d1df",
-              "z": 18,
-              "attrs": {}
-            },
-            {
               "type": "tm.Process",
               "size": {
                 "width": 100,
@@ -1163,8 +1106,8 @@
                 "height": 80
               },
               "position": {
-                "x": 1262,
-                "y": 208
+                "x": 1253,
+                "y": 379
               },
               "angle": 0,
               "id": "ca475878-ea32-46c0-9f60-cbf973aec446",
@@ -1175,7 +1118,236 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "actor 31"
+                  "text": "Physician"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 1014,
+                "y": 223
+              },
+              "target": {
+                "x": 969,
+                "y": 353
+              },
+              "vertices": [
+                {
+                  "x": 1032,
+                  "y": 264
+                },
+                {
+                  "x": 1017,
+                  "y": 299
+                }
+              ],
+              "id": "a00e205e-4bb6-4deb-a9b4-0680843348f5",
+              "z": 46,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 1097,
+                "y": 58
+              },
+              "angle": 0,
+              "id": "62fdac6c-584a-4289-b11e-2488379f80cb",
+              "z": 47,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Cognito"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "aaa862f1-9e66-4b30-a241-f499e142e02e"
+              },
+              "target": {
+                "id": "62fdac6c-584a-4289-b11e-2488379f80cb"
+              },
+              "vertices": [],
+              "id": "817966e6-6782-4718-9c8e-bf62c2a8df79",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "ID, signature",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 48,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "62fdac6c-584a-4289-b11e-2488379f80cb"
+              },
+              "target": {
+                "id": "aaa862f1-9e66-4b30-a241-f499e142e02e"
+              },
+              "vertices": [
+                {
+                  "x": 995,
+                  "y": 145
+                }
+              ],
+              "id": "eb127b84-a7ee-4529-b62a-cd0d24b70a73",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "signed link, ID",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 49,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 1063,
+                "y": 46
+              },
+              "target": {
+                "x": 1127,
+                "y": 185
+              },
+              "vertices": [
+                {
+                  "x": 1053,
+                  "y": 94
+                }
+              ],
+              "id": "24d780c1-a911-415d-a2df-e69c41a92ac3",
+              "z": 50,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 1073,
+                "y": 683
+              },
+              "target": {
+                "x": 1004,
+                "y": 863
+              },
+              "vertices": [],
+              "id": "f5d6f806-d3e6-45d8-b8e0-dea082b70fa7",
+              "z": 51,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 758,
+                "y": 90
+              },
+              "target": {
+                "x": 824,
+                "y": 424
+              },
+              "vertices": [],
+              "id": "50ccdf91-aa29-4be7-8ebc-8b324457820d",
+              "z": 52,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 1253,
+                "y": 280
+              },
+              "angle": 0,
+              "id": "f29efd9c-36d0-4154-bdc1-40262076c682",
+              "z": 53,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Manager"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 1253,
+                "y": 174
+              },
+              "angle": 0,
+              "id": "ca9f7b47-24d0-4b95-8721-868057bfc463",
+              "z": 54,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Administrator"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
