@@ -676,8 +676,8 @@
               },
               "vertices": [
                 {
-                  "x": 590,
-                  "y": 560
+                  "x": 729,
+                  "y": 580
                 }
               ],
               "id": "ee3ba620-98ad-4923-848e-204d95a589cb",
@@ -891,8 +891,8 @@
               },
               "vertices": [
                 {
-                  "x": 1040,
-                  "y": 820
+                  "x": 1063,
+                  "y": 771
                 }
               ],
               "id": "f2a0952f-8950-4f54-b6a0-e62c95c50942",
@@ -1253,8 +1253,8 @@
               "type": "tm.Boundary",
               "smooth": true,
               "source": {
-                "x": 1073,
-                "y": 683
+                "x": 1023,
+                "y": 705
               },
               "target": {
                 "x": 1021,
@@ -1367,10 +1367,13 @@
               "id": "0fd5d51c-1d76-42db-b644-d808e53da33a",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0.4562383501305477,
+                    "offset": 16.445876260994766
+                  },
                   "attrs": {
                     "text": {
-                      "text": "Get Sleep report",
+                      "text": "Registers own email;\nRequests for\nActivation Code; Gets\nSleep report",
                       "font-weight": "400",
                       "font-size": "small"
                     }
