@@ -90,8 +90,8 @@
                 "height": 80
               },
               "position": {
-                "x": 2,
-                "y": 258
+                "x": 20,
+                "y": 24
               },
               "angle": 0,
               "id": "d1f5e698-8716-4809-a61c-ab436b19e257",
@@ -304,8 +304,16 @@
                   "y": 110
                 },
                 {
-                  "x": 560,
-                  "y": 140
+                  "x": 635,
+                  "y": 72
+                },
+                {
+                  "x": 575,
+                  "y": 68
+                },
+                {
+                  "x": 486,
+                  "y": 57
                 },
                 {
                   "x": 257,
@@ -321,7 +329,7 @@
                   },
                   "attrs": {
                     "text": {
-                      "text": "Sleep report Email",
+                      "text": "Sleep report\nnotification email",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -378,12 +386,16 @@
               },
               "vertices": [
                 {
-                  "x": 234,
-                  "y": 455
+                  "x": 241,
+                  "y": 382
                 },
                 {
-                  "x": 287,
-                  "y": 551
+                  "x": 269,
+                  "y": 452
+                },
+                {
+                  "x": 317,
+                  "y": 520
                 }
               ],
               "id": "eff9f3db-54d6-4d10-a9c5-5f6b1f593a85",
@@ -1043,7 +1055,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "Login with MFA",
+                      "text": "Login",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1082,7 +1094,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "Sleep Report and\nSurvey Results",
+                      "text": "Sleep Report",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1335,6 +1347,45 @@
                 }
               ],
               "z": 55,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "d1f5e698-8716-4809-a61c-ab436b19e257"
+              },
+              "target": {
+                "id": "dcb75e28-c76f-45a2-9863-9c2c41c0bd09"
+              },
+              "vertices": [
+                {
+                  "x": 1122,
+                  "y": 28
+                }
+              ],
+              "id": "0fd5d51c-1d76-42db-b644-d808e53da33a",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Get sleep report",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 56,
               "hasOpenThreats": false,
               "attrs": {
                 ".marker-target": {
