@@ -829,9 +829,10 @@
               "id": "8cef187b-feca-4dca-9f88-1fee573da2f0",
               "z": 37,
               "hasOpenThreats": false,
+              "outOfScope": true,
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasNoOpenThreats isOutOfScope"
                 },
                 "text": {
                   "text": "Sleep Scoring"
@@ -1100,32 +1101,6 @@
               }
             },
             {
-              "type": "tm.Actor",
-              "size": {
-                "width": 160,
-                "height": 80
-              },
-              "position": {
-                "x": 1253,
-                "y": 379
-              },
-              "angle": 0,
-              "id": "ca475878-ea32-46c0-9f60-cbf973aec446",
-              "z": 45,
-              "hasOpenThreats": false,
-              "attrs": {
-                ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
-                },
-                "text": {
-                  "text": "Physician"
-                },
-                ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
-                }
-              }
-            },
-            {
               "type": "tm.Boundary",
               "smooth": true,
               "source": {
@@ -1309,34 +1284,8 @@
                 "height": 80
               },
               "position": {
-                "x": 1253,
-                "y": 280
-              },
-              "angle": 0,
-              "id": "f29efd9c-36d0-4154-bdc1-40262076c682",
-              "z": 53,
-              "hasOpenThreats": false,
-              "attrs": {
-                ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
-                },
-                "text": {
-                  "text": "Manager"
-                },
-                ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
-                }
-              }
-            },
-            {
-              "type": "tm.Actor",
-              "size": {
-                "width": 160,
-                "height": 80
-              },
-              "position": {
-                "x": 1253,
-                "y": 174
+                "x": 1112,
+                "y": 423
               },
               "angle": 0,
               "id": "ca9f7b47-24d0-4b95-8721-868057bfc463",
@@ -1351,6 +1300,48 @@
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "aaa862f1-9e66-4b30-a241-f499e142e02e"
+              },
+              "target": {
+                "id": "ca9f7b47-24d0-4b95-8721-868057bfc463"
+              },
+              "vertices": [
+                {
+                  "x": 1024,
+                  "y": 486
+                }
+              ],
+              "id": "623200f1-abad-4130-859a-546190e43ef1",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5039530433811859,
+                    "offset": -10.929924972934035
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Update reports via\nemail with patients\nsleep reports\nstatuses",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 55,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
                 }
               }
             }
