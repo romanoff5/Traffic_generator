@@ -705,7 +705,7 @@
                 "height": 100
               },
               "position": {
-                "x": 1149,
+                "x": 1151,
                 "y": 624
               },
               "angle": 0,
@@ -1129,16 +1129,18 @@
                 "height": 80
               },
               "position": {
-                "x": 981,
-                "y": 415
+                "x": 1097,
+                "y": 425
               },
               "angle": 0,
               "id": "ca9f7b47-24d0-4b95-8721-868057bfc463",
               "z": 54,
               "hasOpenThreats": false,
+              "outOfScope": true,
+              "reasonOutOfScope": "Doesn't have access to the app or API directly",
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasNoOpenThreats isOutOfScope"
                 },
                 "text": {
                   "text": "Administrator"
@@ -1155,12 +1157,15 @@
                 "id": "14433886-e3e4-4162-99cc-5d44b7bbe4ee"
               },
               "target": {
-                "x": 1140,
-                "y": 411
+                "id": "ca9f7b47-24d0-4b95-8721-868057bfc463"
               },
               "vertices": [
                 {
-                  "x": 1381,
+                  "x": 1337,
+                  "y": 248
+                },
+                {
+                  "x": 1275,
                   "y": 349
                 }
               ],
@@ -1366,8 +1371,8 @@
                 "height": 80
               },
               "position": {
-                "x": 1136,
-                "y": 525
+                "x": 1098,
+                "y": 513
               },
               "angle": 0,
               "id": "989221e3-144f-4004-9d35-7976d9bcae55",
@@ -1384,6 +1389,132 @@
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "989221e3-144f-4004-9d35-7976d9bcae55"
+              },
+              "target": {
+                "x": 1224,
+                "y": 629
+              },
+              "vertices": [],
+              "id": "603826a1-5b08-4ee5-bb36-05274ac15259",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.9285457148555109,
+                    "offset": -75.85935641409844
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Performs sleep data\nanalysis",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 61,
+              "hasOpenThreats": false,
+              "outOfScope": true,
+              "reasonOutOfScope": "uses unpersonalised data",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isOutOfScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 1150,
+                "y": 663
+              },
+              "target": {
+                "id": "989221e3-144f-4004-9d35-7976d9bcae55"
+              },
+              "vertices": [],
+              "id": "dad32c9a-94a2-4537-8a30-9b356fe593e8",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.6942889759628488,
+                    "offset": -10.924373814137033
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Provides sleep data",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 62,
+              "hasOpenThreats": false,
+              "outOfScope": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isOutOfScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "ca9f7b47-24d0-4b95-8721-868057bfc463"
+              },
+              "target": {
+                "id": "d1f5e698-8716-4809-a61c-ab436b19e257"
+              },
+              "vertices": [
+                {
+                  "x": 882,
+                  "y": 450
+                },
+                {
+                  "x": 576,
+                  "y": 559
+                },
+                {
+                  "x": 181,
+                  "y": 430
+                }
+              ],
+              "id": "11fd72a0-e06e-4ba0-b406-c511bcda7f67",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Sends activation code\nand sensors",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 63,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
                 }
               }
             }
