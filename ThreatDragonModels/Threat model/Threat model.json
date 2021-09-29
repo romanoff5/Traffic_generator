@@ -522,18 +522,20 @@
               },
               "position": {
                 "x": 860,
-                "y": 470
+                "y": 469
               },
               "angle": 0,
               "id": "6948cd71-2776-4ec6-9ff0-dc1b711d4c58",
               "z": 32,
               "hasOpenThreats": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
               "attrs": {
                 ".element-shape": {
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "Data\nProcessing"
+                  "text": "Data\nprocessing"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
@@ -544,15 +546,16 @@
               "type": "tm.Flow",
               "smooth": true,
               "source": {
-                "id": "df6baafa-76db-4283-b7a8-7fc7f950641e"
+                "x": 871,
+                "y": 307
               },
               "target": {
-                "id": "7b1bd2a2-1e5c-41fa-839e-832a89f3c87e"
+                "id": "6948cd71-2776-4ec6-9ff0-dc1b711d4c58"
               },
               "vertices": [
                 {
-                  "x": 729,
-                  "y": 580
+                  "x": 762,
+                  "y": 482
                 }
               ],
               "id": "ee3ba620-98ad-4923-848e-204d95a589cb",
@@ -617,7 +620,8 @@
               "type": "tm.Flow",
               "smooth": true,
               "source": {
-                "id": "6948cd71-2776-4ec6-9ff0-dc1b711d4c58"
+                "x": 940,
+                "y": 560
               },
               "target": {
                 "id": "7b1bd2a2-1e5c-41fa-839e-832a89f3c87e"
@@ -701,7 +705,7 @@
                 "height": 100
               },
               "position": {
-                "x": 1150,
+                "x": 1149,
                 "y": 624
               },
               "angle": 0,
@@ -709,6 +713,7 @@
               "z": 37,
               "hasOpenThreats": false,
               "outOfScope": true,
+              "reasonOutOfScope": "This is a 3rd-party services  which uses anonymised data.",
               "attrs": {
                 ".element-shape": {
                   "class": "element-shape hasNoOpenThreats isOutOfScope"
@@ -737,7 +742,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "Sleep Data",
+                      "text": "unpersonalised sleep\ndata",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -838,8 +843,8 @@
                 "height": 100
               },
               "position": {
-                "x": 1120,
-                "y": 220
+                "x": 1116,
+                "y": 245
               },
               "angle": 0,
               "id": "dcb75e28-c76f-45a2-9863-9c2c41c0bd09",
@@ -1202,6 +1207,10 @@
                 {
                   "x": 1122,
                   "y": 28
+                },
+                {
+                  "x": 1214,
+                  "y": 138
                 }
               ],
               "id": "0fd5d51c-1d76-42db-b644-d808e53da33a",
@@ -1282,7 +1291,10 @@
               "id": "32dbbb7a-2b11-497f-9c75-8ffcf6f813aa",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0.14611395612721098,
+                    "offset": 17.582588070952244
+                  },
                   "attrs": {
                     "text": {
                       "text": "Takes Act. codes and\nemails",
@@ -1304,12 +1316,82 @@
                   "class": "connection hasNoOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "aaa862f1-9e66-4b30-a241-f499e142e02e"
+              },
+              "target": {
+                "id": "14433886-e3e4-4162-99cc-5d44b7bbe4ee"
+              },
+              "vertices": [
+                {
+                  "x": 1279,
+                  "y": 167
+                }
+              ],
+              "id": "5fdb6bb7-b188-447a-800f-9c94dfa4034c",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.7665461013081148,
+                    "offset": -1.7808923062672029
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Sleep Report\nNotification Email",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 59,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 1136,
+                "y": 525
+              },
+              "angle": 0,
+              "id": "989221e3-144f-4004-9d35-7976d9bcae55",
+              "z": 60,
+              "hasOpenThreats": false,
+              "outOfScope": true,
+              "reasonOutOfScope": "Uses 3rd party platform to analyse sleep data",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isOutOfScope"
+                },
+                "text": {
+                  "text": "Physician"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
             }
           ]
         },
         "size": {
           "height": 1776,
-          "width": 2110
+          "width": 2140
         }
       }
     ]
