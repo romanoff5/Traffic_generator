@@ -50,7 +50,7 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "Database"
+                  "text": "AWS Dynamo DB"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
@@ -146,7 +146,7 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "API"
+                  "text": "AWS API\nGateway"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
@@ -256,14 +256,22 @@
               "target": {
                 "id": "80d59b2d-0ef3-498b-8af3-dce1ea2629c9"
               },
-              "vertices": [],
+              "vertices": [
+                {
+                  "x": 904,
+                  "y": 147
+                }
+              ],
               "id": "7ca0cf27-9119-496b-b105-ff4fc56f82b2",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0.566522174081438,
+                    "offset": 2.0206950845352796
+                  },
                   "attrs": {
                     "text": {
-                      "text": "Survey Results",
+                      "text": "Activation codes and\nuser emails for SES,\ncognito user ID",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -271,139 +279,6 @@
                 }
               ],
               "z": 16,
-              "hasOpenThreats": false,
-              "attrs": {
-                ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
-                },
-                ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
-                }
-              }
-            },
-            {
-              "type": "tm.Flow",
-              "smooth": true,
-              "source": {
-                "id": "aaa862f1-9e66-4b30-a241-f499e142e02e"
-              },
-              "target": {
-                "id": "d1f5e698-8716-4809-a61c-ab436b19e257"
-              },
-              "vertices": [
-                {
-                  "x": 880,
-                  "y": 210
-                },
-                {
-                  "x": 860,
-                  "y": 180
-                },
-                {
-                  "x": 780,
-                  "y": 110
-                },
-                {
-                  "x": 635,
-                  "y": 72
-                },
-                {
-                  "x": 575,
-                  "y": 68
-                },
-                {
-                  "x": 486,
-                  "y": 57
-                },
-                {
-                  "x": 257,
-                  "y": 84
-                }
-              ],
-              "id": "1aff6fa0-1165-43dc-99f1-3dfa9512e708",
-              "labels": [
-                {
-                  "position": {
-                    "distance": 0.5046414458308607,
-                    "offset": 0.8587867355354497
-                  },
-                  "attrs": {
-                    "text": {
-                      "text": "Sleep report\nnotification email",
-                      "font-weight": "400",
-                      "font-size": "small"
-                    }
-                  }
-                }
-              ],
-              "z": 17,
-              "hasOpenThreats": false,
-              "attrs": {
-                ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
-                },
-                ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
-                }
-              }
-            },
-            {
-              "type": "tm.Process",
-              "size": {
-                "width": 100,
-                "height": 100
-              },
-              "position": {
-                "x": 446,
-                "y": 376
-              },
-              "angle": 0,
-              "id": "af098ac8-4ef9-4c14-91ef-7658bfc49553",
-              "z": 19,
-              "hasOpenThreats": false,
-              "outOfScope": true,
-              "reasonOutOfScope": "External service",
-              "attrs": {
-                ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isOutOfScope"
-                },
-                "text": {
-                  "text": "Survey Service"
-                },
-                ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
-                }
-              }
-            },
-            {
-              "type": "tm.Flow",
-              "smooth": true,
-              "source": {
-                "id": "d1f5e698-8716-4809-a61c-ab436b19e257"
-              },
-              "target": {
-                "id": "af098ac8-4ef9-4c14-91ef-7658bfc49553"
-              },
-              "vertices": [
-                {
-                  "x": 219,
-                  "y": 372
-                }
-              ],
-              "id": "eff9f3db-54d6-4d10-a9c5-5f6b1f593a85",
-              "labels": [
-                {
-                  "position": 0.5,
-                  "attrs": {
-                    "text": {
-                      "text": "Survey",
-                      "font-weight": "400",
-                      "font-size": "small"
-                    }
-                  }
-                }
-              ],
-              "z": 20,
               "hasOpenThreats": false,
               "attrs": {
                 ".marker-target": {
@@ -957,45 +832,6 @@
               }
             },
             {
-              "type": "tm.Flow",
-              "smooth": true,
-              "source": {
-                "id": "af098ac8-4ef9-4c14-91ef-7658bfc49553"
-              },
-              "target": {
-                "id": "aaa862f1-9e66-4b30-a241-f499e142e02e"
-              },
-              "vertices": [
-                {
-                  "x": 769,
-                  "y": 399
-                }
-              ],
-              "id": "1965939e-a069-4848-9c24-e4268bfb9a7f",
-              "labels": [
-                {
-                  "position": 0.5,
-                  "attrs": {
-                    "text": {
-                      "text": "Survey Results",
-                      "font-weight": "400",
-                      "font-size": "small"
-                    }
-                  }
-                }
-              ],
-              "z": 41,
-              "hasOpenThreats": false,
-              "attrs": {
-                ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
-                },
-                ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
-                }
-              }
-            },
-            {
               "type": "tm.Process",
               "size": {
                 "width": 100,
@@ -1148,7 +984,7 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "Cognito"
+                  "text": "AWS Cognito"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
@@ -1288,8 +1124,8 @@
                 "height": 80
               },
               "position": {
-                "x": 1112,
-                "y": 423
+                "x": 981,
+                "y": 415
               },
               "angle": 0,
               "id": "ca9f7b47-24d0-4b95-8721-868057bfc463",
@@ -1311,15 +1147,16 @@
               "type": "tm.Flow",
               "smooth": true,
               "source": {
-                "id": "aaa862f1-9e66-4b30-a241-f499e142e02e"
+                "id": "14433886-e3e4-4162-99cc-5d44b7bbe4ee"
               },
               "target": {
-                "id": "ca9f7b47-24d0-4b95-8721-868057bfc463"
+                "x": 1140,
+                "y": 411
               },
               "vertices": [
                 {
-                  "x": 1024,
-                  "y": 486
+                  "x": 1381,
+                  "y": 349
                 }
               ],
               "id": "623200f1-abad-4130-859a-546190e43ef1",
@@ -1331,7 +1168,7 @@
                   },
                   "attrs": {
                     "text": {
-                      "text": "Update reports via\nemail with patients\nsleep reports\nstatuses",
+                      "text": "Gets patients emails\nand activation codes",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -1340,6 +1177,9 @@
               ],
               "z": 55,
               "hasOpenThreats": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "SMTP",
               "attrs": {
                 ".marker-target": {
                   "class": "marker-target hasNoOpenThreats isInScope"
@@ -1385,6 +1225,77 @@
               "isEncrypted": true,
               "isPublicNetwork": true,
               "protocol": "HTTPs",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 1269,
+                "y": 12
+              },
+              "angle": 0,
+              "id": "14433886-e3e4-4162-99cc-5d44b7bbe4ee",
+              "z": 57,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "AWS Simple\nEmail Service"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "14433886-e3e4-4162-99cc-5d44b7bbe4ee"
+              },
+              "target": {
+                "id": "80d59b2d-0ef3-498b-8af3-dce1ea2629c9"
+              },
+              "vertices": [
+                {
+                  "x": 1195,
+                  "y": 28
+                },
+                {
+                  "x": 1101,
+                  "y": 28
+                }
+              ],
+              "id": "32dbbb7a-2b11-497f-9c75-8ffcf6f813aa",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Takes Act. codes and\nemails",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 58,
+              "hasOpenThreats": false,
+              "protocol": "HTTPs",
+              "isEncrypted": true,
               "attrs": {
                 ".marker-target": {
                   "class": "marker-target hasNoOpenThreats isInScope"
